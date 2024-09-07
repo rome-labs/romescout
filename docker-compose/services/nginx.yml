@@ -1,9 +1,9 @@
 version: '3.9'
 
 services:
-  proxy:
+  blockscout_proxy:
     image: nginx
-    container_name: proxy
+    container_name: blockscout_proxy
     extra_hosts:
       - 'host.docker.internal:host-gateway'
       - 'evm.devnet.romeprotocol.xyz:host-gateway'
