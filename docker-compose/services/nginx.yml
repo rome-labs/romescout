@@ -6,11 +6,11 @@ services:
     container_name: blockscout_proxy
     extra_hosts:
       - 'host.docker.internal:host-gateway'
-      - 'evm.devnet.romeprotocol.xyz:host-gateway'
+      - 'romeevm.devnet.romeprotocol.xyz:host-gateway'
     volumes:
       - ../proxy:/etc/nginx/templates
-      - /etc/letsencrypt/live/evm.devnet.romeprotocol.xyz/fullchain.pem:/etc/nginx/ssl/selfsigned.crt
-      - /etc/letsencrypt/live/evm.devnet.romeprotocol.xyz/privkey.pem:/etc/nginx/ssl/selfsigned.key
+      - /etc/letsencrypt/live/romeevm.devnet.romeprotocol.xyz/fullchain.pem:/etc/nginx/ssl/selfsigned.crt
+      - /etc/letsencrypt/live/romeevm.devnet.romeprotocol.xyz/privkey.pem:/etc/nginx/ssl/selfsigned.key
     environment:
       BACK_PROXY_PASS: http://backend:4000
       FRONT_PROXY_PASS: http://frontend:3000
